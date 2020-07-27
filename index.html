@@ -26,81 +26,128 @@
 <div id = "map" ></div>
 
 <script>
-//
+
+    //
     // initialize your map here
-    var map = L.map('map').setView([41.967, -87.665], 12);
+    var map = L.map('map').setView([41.967, -87.665], 14);
 
 
     // add a base layer
+
     var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
         attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         subdomains: 'abcd',
-        minZoom: 1,
-        maxZoom: 16,
+        minZoom: 14,
+        maxZoom: 17,
         ext: 'jpg'
     }).addTo(map);
 
 
 
+   // create a variable that pulls in a new icon image
+    var houseIcon = L.icon({
+    iconUrl: 'homeicon.png',
+      iconSize: [20, 20],
+    });
 
-    //add circle point to map and change the size/style
-    //var circle = L.circle([41.86, -87.66],{
-     /*   color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 900,
-    //}).addTo(map).bindPopup("this could be a reasonable walking distance from my house");
+    var foodIcon = L.icon({
+        iconUrl: 'restauranticon.jpg',
+        iconSize: [20, 20],
+    });
 
-*/
- //create a variable that pulls in a new icon image
- //var myIcon = L.icon({
-     iconUrl: 'babyicon.png',
-     iconSize: [30, 30],
- }); 
+    var shopIcon = L.icon({
+        iconUrl: 'shopicon.jpg',
+        iconSize: [20, 20],
+    });
 
- //create markers & give it the icon we created
-  // Stone Soup
-  var marker = L.marker([41.967388, -87.665361],{
-     icon: myIcon
- }).addTo(map).bindPopup("Stone Soup");
+    //create markers & give it the icon we created
+    // Stone Soup
+    var marker = L.marker([41.967388, -87.665361], {
+        icon: houseIcon
+    }).addTo(map).bindPopup("Stone Soup: I lived in this house from August 2017 to March 2018. It's an intentional community of activists, artists, and organizers, and was essential to transitioning to life after college.");
 
- var marker = L.marker([41.85, -87.67],{
-     icon: myIcon
- }).addTo(map).bindPopup("Daycare 2");
+    var marker1 = L.marker([ 41.971991, -87.670751],{
+        icon: houseIcon
+    }).addTo(map).bindPopup("Current Apartment: I lived at 4903 N. Paulina Street from March 2018 to July 2020. It's technically a one-bedroom, but my partner and I used it as a two-bedroom. It doesn't get enough sunlight, but it has a back porch and a front yard. I'll miss it a lot.");
 
- var marker = L.marker([41.83, -87.64],{
-     icon: myIcon
- }).addTo(map).bindPopup("Daycare 3");
+    var marker2 = L.marker([41.976868, -87.668246],{
+       icon: houseIcon
+    }).addTo(map).bindPopup("Sophie's Place");
 
- var marker = L.marker([41.82, -87.61],{
-     icon: myIcon
- }).addTo(map).bindPopup("Daycare 4");
+    var marker3 = L.marker([41.973, -87.669],{
+        icon: houseIcon
+    }).addTo(map).bindPopup("Anna and Lucinda's Place");
 
+    var marker4 = L.marker([ 41.972930, -87.673098 ],{
+         icon: houseIcon
+    }).addTo(map).bindPopup("Ben's Place");
 
- //create a polygon and style
- var polygon = L.polygon([
-     [41.66, -87.11],
-     [41.73, -87.06],
-     [41.96, -87.31],
-     [41.41, -87.47],
- ], {
-     color: 'purple',
-     fillColor: 'green',
-     fillOpacity: .11,
- }).addTo(map).bindPopup("This is an unreasonably large tristate polygon");
+    var marker5 = L.marker([41.977, -87.679],{
+         icon: houseIcon
+    }).addTo(map).bindPopup("Virginia's Place");
 
- //create a line
- var line = L.polyline([
-     [41.36, -87.91],
-     [41.23, -87.16],
-     [41.46, -87.31],
-     [41.71, -87.57],
- ]).addTo(map).bindPopup("What could this line mean?");
+    var marker6 = L.icon([41.976640, -87.668630],{
+          icon: foodIcon
+    }).addTo(map).bindPopup("Simon's: Probably my favorite bar in Chicago? Divey, unpretentious, with a great jukebox. Also in the summertime, frozen glogg slushies, which are delicious. Went there for the first time since quarantine in late July before it had to shut down again, not sure I'll ever have the chance to go back.");
+
+    var marker7 = L.icon([41.975904, -87.668650],{
+         icon: foodIcon
+    }).addTo(map).bindPopup("Hopleaf");
+
+    var marker8 = L.icon([41.974123, -87.668363],{
+         icon: foodIcon
+    }).addTo(map).bindPopup("Jets: Truly the best pizza.");
+
+    var marker9 = L.icon([ 41.971692, -87.668236 ],{
+         icon: shopIcon
+    }).addTo(map).bindPopup("Village Discount Outlet: I think the first time I went to the Village was for my 20th birthday, when I took a bunch of my friends on the Metra and we went thrifting. Then I moved a block away from it after college -- truly wild. I will miss being this close to this store, but at least I just got a tattoo of the sign on my leg to commemorate its magic.");
+
+    var marker10 = L.icon([ 41.968624, -87.673046 ],{
+        icon: foodIcon
+    }).addTo(map).bindPopup("Taqueria Primo Chuki's: It will be nearly impossible to replace Primo Chuki's. Truly the best taqueria of all-time, not just for the food, but for the small, persistent sense of normalcy it's given life over the past few years.");
+
+    var marker11 = L.icon([ 41.969485, -87.675084 ],{
+        icon: shopIcon
+    }) .addTo(map).bindPopup("Mariano's");
+
+   // var marker12 = L.icon([41.973948, -87.681698],{
+     //     icon: greenIcon
+    //}).addTo(map).bindPopup("Winnemac Park");
+
+    //var marker13 = L.icon([41.968504, -87.674566],{
+      //    icon: greenIcon
+    //}).addTo(map).bindPopup("Ravenswood Metra Station");
+
+    var marker14 = L.icon([ 41.968792, -87.667633 ],{
+          icon: foodIcon
+    }).addTo(map).bindPopup("Ridman's");
+
+    //var marker15 = L.icon([ 41.968665, -87.667304 ],{
+      //   icon: greenIcon
+    //}) .addTo (map) .blindPopup("Lawrence & Clark Gallery");
+
+    var marker16 = L.icon([ 41.979706, -87.669497 ],{
+        icon: foodIcon
+    }) .addTo (map) .blindPopup("First Slice Pie Cafe");
+
+    var marker17 = L.icon([  41.980265, -87.668472  ],{
+         icon: shopIcon
+    }) .addTo (map) .blindPopup("Brown Elephant");
+
+    var marker18 = L.icon([  41.963889, -87.656902  ],{
+        icon: shopIcon
+    }) .addTo (map) .blindPopup("Aldi");
+
+   // var marker19 = L.icon([ 41.968665, -87.667304 ],{
+     //   icon: greenIcon
+    //}) .addTo (map) .blindPopup("Lawrence & Clark Gallery");
+
+    var marker20 = L.icon([ 41.982357, -87.668234 ],{
+        icon: shopIcon
+    }) .addTo (map) .blindPopup("Edgewater Produce");
 
 
 </script>
-
-
 
 </body>
 
