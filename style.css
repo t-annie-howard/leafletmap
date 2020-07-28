@@ -1,18 +1,40 @@
+body {
+    background-image:url('https://artsalivechicago.org/wp-content/uploads/2017/11/IMG_5154.jpg');
+    background-repeat:repeat;
+    background-size:25%;
+}
+
 .intro {
     width: 500px;
     margin: auto;
+    color: white;
 }
 
 .intro h1 {
     font-family: 'Nunito', sans-serif;
     text-align: center;
     font-size: 20pt;
+    color: white;
 }
 
 .intro h3 {
     font-family: 'Nunito', sans-serif;
     text-align: center;
     font-size: 14pt;
+    color: white;
+}
+
+.intro h4 {
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    font-size: 12pt;
+}
+
+.p {
+    font:family: 'Nunito,' sans-serif;
+    text-align: center;
+    font-size: 10pt;
+    color: white;
 }
 
 

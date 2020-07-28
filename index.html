@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="english">
 <head>
     <title>Annie Howard Leaflet Map UPP 465</title>
     <link rel="stylesheet" href="style.css">
@@ -21,15 +21,15 @@
 <div class = "intro">
     <h1>My Uptown Map</h1>
     <h3>Saying goodbye to Uptown and marking some of the places that made it special</h3>
+    <h4>Note: Almost everything is in view at this scale, but zoom in and out to get a better sense of the different locations.</h4>
 </div>
 
 <div id = "map" ></div>
 
 <script>
 
-    //
     // initialize your map here
-    var map = L.map('map').setView([41.967, -87.665], 14);
+    var map = L.map('map').setView([41.973, -87.67], 15);
 
 
     // add a base layer
@@ -43,112 +43,170 @@
     }).addTo(map);
 
 
-
-   // create a variable that pulls in a new icon image
     var houseIcon = L.icon({
     iconUrl: 'homeicon.png',
       iconSize: [20, 20],
     });
 
     var foodIcon = L.icon({
-        iconUrl: 'restauranticon.jpg',
-        iconSize: [20, 20],
+        iconUrl: 'restauranticon.png',
+        iconSize: [30, 30],
     });
 
     var shopIcon = L.icon({
-        iconUrl: 'shopicon.jpg',
-        iconSize: [20, 20],
+        iconUrl: 'shopicon.png',
+        iconSize: [30, 30],
     });
 
-    //create markers & give it the icon we created
-    // Stone Soup
+    var parkIcon = L.icon({
+        iconUrl: 'parkicon.png',
+        iconSize: [30, 30],
+    });
+
+    var transitIcon = L.icon({
+        iconUrl: 'transiticon.png',
+        iconSize: [30, 30],
+    });
+
+    var bookIcon = L.icon({
+        iconUrl: 'bookicon.png',
+        iconSize: [30, 30],
+    });
+
+    var cultureIcon = L.icon({
+        iconUrl: 'cultureicon.png',
+        iconSize: [30, 30],
+    });
+
+
+
     var marker = L.marker([41.967388, -87.665361], {
         icon: houseIcon
-    }).addTo(map).bindPopup("Stone Soup: I lived in this house from August 2017 to March 2018. It's an intentional community of activists, artists, and organizers, and was essential to transitioning to life after college.");
+    }).addTo(map).bindPopup("<b>Stone Soup</b>: I lived in this house from August 2017 to March 2018. It's an intentional community of activists, artists, and organizers, and was essential to transitioning to life after college.");
 
     var marker1 = L.marker([ 41.971991, -87.670751],{
         icon: houseIcon
-    }).addTo(map).bindPopup("Current Apartment: I lived at 4903 N. Paulina Street from March 2018 to July 2020. It's technically a one-bedroom, but my partner and I used it as a two-bedroom. It doesn't get enough sunlight, but it has a back porch and a front yard. I'll miss it a lot.");
+    }).addTo(map).bindPopup("<b>Current Apartment</b>: I lived at 4903 N. Paulina Street from March 2018 to July 2020. It's technically a one-bedroom, but my partner and I used it as a two-bedroom. It doesn't get enough sunlight, but it has a back porch and a front yard. I'll miss it a lot.");
 
-    var marker2 = L.marker([41.976868, -87.668246],{
+    var marker = L.marker([41.976868, -87.668246],{
        icon: houseIcon
-    }).addTo(map).bindPopup("Sophie's Place");
+    }).addTo(map).bindPopup("<b>Sophie's Place</b>");
+
+    var marker = L.marker([41.971362, -87.669721],{
+        icon: houseIcon
+    }).addTo(map).bindPopup("<b>Nick, Brock, and Eli's Place</b>");
+
+    var marker = L.marker([ 41.983023, -87.656946 ],{
+        icon: houseIcon
+    }).addTo(map).bindPopup("<b>Elise's Old Place</b>");
 
     var marker3 = L.marker([41.973, -87.669],{
         icon: houseIcon
-    }).addTo(map).bindPopup("Anna and Lucinda's Place");
+    }).addTo(map).bindPopup("<b>Anna and Lucinda's Place</b>");
 
     var marker4 = L.marker([ 41.972930, -87.673098 ],{
          icon: houseIcon
-    }).addTo(map).bindPopup("Ben's Place");
+    }).addTo(map).bindPopup("<b>Ben's Place</b>");
 
     var marker5 = L.marker([41.977, -87.679],{
          icon: houseIcon
-    }).addTo(map).bindPopup("Virginia's Place");
+    }).addTo(map).bindPopup("<b>Virginia's Place</b>");
 
-    var marker6 = L.icon([41.976640, -87.668630],{
+    var marker6 = L.marker([41.976640, -87.668630],{
           icon: foodIcon
-    }).addTo(map).bindPopup("Simon's: Probably my favorite bar in Chicago? Divey, unpretentious, with a great jukebox. Also in the summertime, frozen glogg slushies, which are delicious. Went there for the first time since quarantine in late July before it had to shut down again, not sure I'll ever have the chance to go back.");
+    }).addTo(map).bindPopup("<b>Simon's</b>: Probably my favorite bar in Chicago? Divey, unpretentious, with a great jukebox. Also in the summertime, frozen glogg slushies, which are delicious. Went there for the first time since quarantine in late July before it had to shut down again, not sure I'll ever have the chance to go back.");
 
-    var marker7 = L.icon([41.975904, -87.668650],{
+    var marker7 = L.marker([41.975904, -87.668650],{
          icon: foodIcon
-    }).addTo(map).bindPopup("Hopleaf");
+    }).addTo(map).bindPopup("<b>Hopleaf</b>: This place is so good. Amazing beer selection, just a generally amazing atmosphere, and the best pomme frites imaginable. Before he left Chicago my favorite author, Aleksander Hemon, came here all the time; I never ran into him, but I still like to imagine it'll happen someday.");
 
-    var marker8 = L.icon([41.974123, -87.668363],{
+    var marker8 = L.marker([41.974123, -87.668363],{
          icon: foodIcon
-    }).addTo(map).bindPopup("Jets: Truly the best pizza.");
+    }).addTo(map).bindPopup("<b>Jets</b>: Truly the best pizza I can possibly imagine. Like the platonic idea of pizza. Jet's sent us a 50 percent off coupon a few weeks before we moved that doesn't expire until two days after we're gone, because they're just that good.");
 
-    var marker9 = L.icon([ 41.971692, -87.668236 ],{
+    var marker9 = L.marker([ 41.971692, -87.668236 ],{
          icon: shopIcon
-    }).addTo(map).bindPopup("Village Discount Outlet: I think the first time I went to the Village was for my 20th birthday, when I took a bunch of my friends on the Metra and we went thrifting. Then I moved a block away from it after college -- truly wild. I will miss being this close to this store, but at least I just got a tattoo of the sign on my leg to commemorate its magic.");
+    }).addTo(map).bindPopup("<b>Village Discount Outlet</b>: I think the first time I went to the Village was for my 20th birthday, when I took a bunch of my friends on the Metra and we went thrifting. Then I moved a block away from it after college -- truly wild. I will miss being this close to this store, but at least I just got a tattoo of the sign on my leg to commemorate its magic.");
 
-    var marker10 = L.icon([ 41.968624, -87.673046 ],{
+    var marker10 = L.marker([ 41.968950, -87.673046 ],{
         icon: foodIcon
-    }).addTo(map).bindPopup("Taqueria Primo Chuki's: It will be nearly impossible to replace Primo Chuki's. Truly the best taqueria of all-time, not just for the food, but for the small, persistent sense of normalcy it's given life over the past few years.");
+    })  .addTo(map).bindPopup("<b>Taqueria Primo Chuki's</b>: It will be nearly impossible to replace Primo Chuki's. Truly the best taqueria of all-time, not just for the food, but for the small, persistent sense of normalcy it's given life over the past few years.");
 
-    var marker11 = L.icon([ 41.969485, -87.675084 ],{
+    var marker10 = L.marker([  41.976361, -87.668732  ],{
+        icon: foodIcon
+    })  .addTo(map).bindPopup("<b>Middle Eastern Bakery</b>: One of the tastiest restaurants in the neighborhood. I especially love the grocery section -- such good hummus and hand pies.");
+
+    var marker11 = L.marker([ 41.969485, -87.675084 ],{
         icon: shopIcon
-    }) .addTo(map).bindPopup("Mariano's");
+    }) .addTo(map).bindPopup("<b>Mariano's</b>");
 
-   // var marker12 = L.icon([41.973948, -87.681698],{
-     //     icon: greenIcon
-    //}).addTo(map).bindPopup("Winnemac Park");
+    var marker12 = L.marker([41.973948, -87.681698],{
+       icon: parkIcon
+    }).addTo(map).bindPopup("<b>Winnemac Park</b>: A perfect little neighborhood park. Have been enjoying going into the prairie garden that they have recently and just watching all of the fireflies that light up by the hundreds at night.");
 
-    //var marker13 = L.icon([41.968504, -87.674566],{
-      //    icon: greenIcon
-    //}).addTo(map).bindPopup("Ravenswood Metra Station");
+    var marker13 = L.marker([41.968504, -87.674566],{
+          icon: transitIcon
+    }).addTo(map).bindPopup("<b>Ravenswood Metra Station</b>: I love the Metra. My partner took this train for two years to get to her job (ironically, working for Metra), and I used it to make trips to downtown or the Hideout or Evanston much quicker than I would have otherwise. The only downside? Trains only run every hour or so, so my usual tardiness has made me miss my train from time to time.");
 
-    var marker14 = L.icon([ 41.968792, -87.667633 ],{
+
+    var marker13 = L.marker([ 41.964851, -87.657637 ],{
+        icon: transitIcon
+    }).addTo(map).bindPopup("<b>Wilson Red/Purple Line Station</b>: It's been so handy to have this train station so close by. I still go up to Evanston from time to time, so being able to catch a Purple Line Express and get from downtown Evanston to Uptown (or vice versa) in about ten minutes is always amazing.");
+
+    var marker14 = L.marker([ 41.968792, -87.667633 ],{
           icon: foodIcon
-    }).addTo(map).bindPopup("Ridman's");
+    })  .addTo(map) .bindPopup("<b>Ridman's</b>: A bit expensive, but such a good coffee shop. Best part: owned by two lesbians!");
 
-    //var marker15 = L.icon([ 41.968665, -87.667304 ],{
-      //   icon: greenIcon
-    //}) .addTo (map) .blindPopup("Lawrence & Clark Gallery");
+   var marker15 = L.marker([ 41.968665, -87.667304 ],{
+        icon: cultureIcon
+    }) .addTo (map) .bindPopup("<b>Lawrence & Clark Gallery</b>: Every Saturday, Jason opens his storefront gallery for people to come and hang out. I've had so much fun just talking about art for hours on end with the many interesting people that come through. Late last year and early this year, Jason even had Andy Warhol's 'Silver Clouds' exhibit, a bunch of shiny silver baloons that floated around the space.");
 
-    var marker16 = L.icon([ 41.979706, -87.669497 ],{
+    var marker16 = L.marker([ 41.979706, -87.669497 ],{
         icon: foodIcon
-    }) .addTo (map) .blindPopup("First Slice Pie Cafe");
+    }) .addTo (map) .bindPopup("<b>First Slice Pie Cafe</b>: Such an amazing cafe. I wrote most of my biggest grad school paper here last December. I miss the homey atmosphere, the art on the walls (we ended up buying one of the paintings because we liked it so much), and the vegetable lasagna.");
 
-    var marker17 = L.icon([  41.980265, -87.668472  ],{
+    var marker17 = L.marker([  41.980265, -87.668472  ],{
          icon: shopIcon
-    }) .addTo (map) .blindPopup("Brown Elephant");
+    }) .addTo (map) .bindPopup("<b>Brown Elephant</b>: Not quite as dear of a thrift shop as the Village, but still so good. Bought a pair of very expensive and durable black boots there (right as my last pair fell apart) in my exact size for $30. Truly, a gem.");
 
-    var marker18 = L.icon([  41.963889, -87.656902  ],{
+    var marker18 = L.marker([  41.963889, -87.656902  ],{
         icon: shopIcon
-    }) .addTo (map) .blindPopup("Aldi");
+    }) .addTo (map) .bindPopup("<b>Aldi</b>>: I love Aldi so much! Such good deals on everything, especially on some of the core things that I buy all the time.");
 
-   // var marker19 = L.icon([ 41.968665, -87.667304 ],{
-     //   icon: greenIcon
-    //}) .addTo (map) .blindPopup("Lawrence & Clark Gallery");
+    var marker19 = L.marker([  41.975625, -87.668588  ],{
+        icon: bookIcon
+    }) .addTo (map) .bindPopup("<b>Uncharted Books</b>: I love this bookstore so much! It moved from Logan Square to Andersonville last summer, and ever since, I've been a regular. I'll miss seeing my friend Mattie who works there as often as I do now.");
 
-    var marker20 = L.icon([ 41.982357, -87.668234 ],{
+    var marker20 = L.marker([ 41.982357, -87.668234 ],{
         icon: shopIcon
-    }) .addTo (map) .blindPopup("Edgewater Produce");
+    }) .addTo (map) .bindPopup("<b>Edgewater Produce</b>: Such a good grocery store. Truly, the best deals on produce, and so much variety.");
+
+    var marker21 = L.marker([  41.971703, -87.660628  ], {
+        icon: bookIcon
+    })  .addTo (map) .bindPopup("<b>Bezazian Library Branch</b>: My little neighborhood library. Very unassuming, but always a great place to grab a hold and whatever else catches my eye while I'm there.");
+
+    var marker21 = L.marker([   41.977222, -87.668222   ], {
+        icon: bookIcon
+    })  .addTo (map) .bindPopup("<b>Women and Children First</b>: I love Women and Children First! I don't always have the funds to buy new books, but if I do, they're one of the best.");
+
+    var marker15 = L.marker([ 41.976044, -87.669209],{
+        icon: cultureIcon
+    }) .addTo (map) .bindPopup("<b>Neo Futurists Theater</b>: I don't really love theater all that much, but the Neo Futurists are special. Their trademark show is the Infinite Wrench, in which the group tries to perform 30 plays in 60 minutes, all written by the cast members about their lived experience.");
+
+
+    var marker15 = L.marker([ 41.968726, -87.659882],{
+        icon: cultureIcon
+    }) .addTo (map) .bindPopup("<b>The Riviera Theatre</b>: I went to my first show at the Riv early in my undergrad days, to see Animal Collective. Ever since, it's been one of my favorite venues in the city. It was wild moving just a few blocks away from the venue after college, and since graduating, I've seen Grizzly Bear, Passion Pit, and FKA Twigs here.");
+
+    var marker15 = L.marker([ 41.969248, -87.657990],{
+        icon: cultureIcon
+    }) .addTo (map) .bindPopup("<b>Aragon Ballroom</b>: Another venue that I've been to a good number of shows at is the Aragon. A few favorites have been LCD Soundystem and the Knife. Not my favorite venue in the city, but I've still had some magical experiences here.");
 
 
 </script>
-
+<div class="p">
+<p><i>Note: All icons courtesy of <a href="https://thenounproject.com/" target="blank">The Noun Project</a></i></p>
+</div>
 </body>
 
 </html>
