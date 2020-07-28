@@ -58,10 +58,10 @@
         iconSize: [30, 30],
     });
 
-    var parkIcon = L.icon({
-        iconUrl: 'parkicon.png',
-        iconSize: [30, 30],
-    });
+  //  var parkIcon = L.icon({
+    //    iconUrl: 'parkicon.png',
+      //  iconSize: [30, 30],
+  //  });
 
     var transitIcon = L.icon({
         iconUrl: 'transiticon.png',
@@ -140,10 +140,6 @@
         icon: shopIcon
     }) .addTo(map).bindPopup("<b>Mariano's</b>");
 
-    var marker12 = L.marker([41.973948, -87.681698],{
-       icon: parkIcon
-    }).addTo(map).bindPopup("<b>Winnemac Park</b>: A perfect little neighborhood park. Have been enjoying going into the prairie garden that they have recently and just watching all of the fireflies that light up by the hundreds at night.");
-
     var marker13 = L.marker([41.968504, -87.674566],{
           icon: transitIcon
     }).addTo(map).bindPopup("<b>Ravenswood Metra Station</b>: I love the Metra. My partner took this train for two years to get to her job (ironically, working for Metra), and I used it to make trips to downtown or the Hideout or Evanston much quicker than I would have otherwise. The only downside? Trains only run every hour or so, so my usual tardiness has made me miss my train from time to time.");
@@ -201,6 +197,30 @@
     var marker15 = L.marker([ 41.969248, -87.657990],{
         icon: cultureIcon
     }) .addTo (map) .bindPopup("<b>Aragon Ballroom</b>: Another venue that I've been to a good number of shows at is the Aragon. A few favorites have been LCD Soundystem and the Knife. Not my favorite venue in the city, but I've still had some magical experiences here.");
+
+
+    var line = L.polyline([
+        [41.971849, -87.66469],
+        [41.99, -87.66469]
+    ]).addTo(map).bindPopup("<b>Glenwood Avenue</b>: AKA my favorite biking street in the neighborhood.");
+
+    var circle = L.circle([ 41.986297, -87.651904 ],{
+        color: 'blue',
+        fillColor: '#f03',
+        fillOpacity: 0.2,
+        radius: 150,
+    }).addTo(map).bindPopup("<b>Kathy Osterman Beach</b>: Well-known as the gay beach. I will miss being a 15 minute bike ride from here.");
+
+    var polygon = L.polygon([
+        [ 41.972331, -87.684162 ],
+        [ 41.976, -87.684280 ],
+        [ 41.976, -87.679397 ],
+        [ 41.972397, -87.679261 ],
+    ], {
+        color: 'blue',
+        fillColor: 'green',
+        fillOpacity: .2,
+    }).addTo(map).bindPopup("<b>Winnemac Park</b>: A perfect little neighborhood park. Have been enjoying going into the prairie garden that they have recently and just watching all of the fireflies that light up by the hundreds at night.");
 
 
 </script>
